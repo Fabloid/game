@@ -132,7 +132,7 @@ namespace game.Models.Сlasses
             char symbol=' ';
             if (arr_moves[0] == arr_moves[1] && arr_moves[0] == arr_moves[2] && arr_moves[0] != ' ')
                 symbol = arr_moves[0];
-            if (arr_moves[3] == arr_moves[4] && arr_moves[3] == arr_moves[4] && arr_moves[3] != ' ')
+            if (arr_moves[3] == arr_moves[4] && arr_moves[3] == arr_moves[5] && arr_moves[3] != ' ')
                 symbol = arr_moves[3];
             if (arr_moves[6] == arr_moves[7] && arr_moves[7] == arr_moves[8] && arr_moves[6] != ' ')
                 symbol = arr_moves[6];

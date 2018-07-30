@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using game.Models.Сlasses;
-using System.Data.Entity;
 
 namespace game.Controllers
 {
@@ -21,25 +18,23 @@ namespace game.Controllers
             if (id!=0)
             {
                 s = (char[])Session["press"];
-                string res = pc.Result_game(s);
+                string res = pc.Result_game(s);                
                 if (res==" ")
                 {                    
                     if (s[id - 1] == ' ')
                     {
                         data.Add_move(id, 1);
                         s[id - 1] = 'X';
-                        s = pc.Move_PC(s);
+                        if (pc.Result_game(s)==" ")
+                            s = pc.Move_PC(s);
                     }
                 }
-                else
-                {
-                    int win = 0;
-                    if (res == "Вы победили") win = 1;
-                    if (res == "Победил ИИ") win = 2;
-                    if (res == "Ничья") win = 3;
-                    data.Save_result_game(win);
-                }
                 ViewBag.Result = pc.Result_game(s);
+                int win = 0;
+                if (ViewBag.Result == "Вы победили") win = 1;
+                if (ViewBag.Result == "Победил ИИ") win = 2;
+                if (ViewBag.Result == "Ничья") win = 3;
+                data.Save_result_game(win);
                 ViewBag.Symbol1 = s[0];
                 ViewBag.Symbol2 = s[1];
                 ViewBag.Symbol3 = s[2];

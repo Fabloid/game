@@ -1,0 +1,18 @@
+﻿<div>
+    <h3>Список игр</h3>
+    <table>
+        <tr>
+            <td><p>Номер игры</p></td>
+            <td><p>Победитель</p></td>
+            <td></td>
+        </tr>
+        @foreach (var g in ViewBag.Games)
+        {
+        <tr>
+            <td><p>@g._id</p></td>
+            <td><p>@g._winner</p></td>
+            <td><p><a href="/Home/Details/@g._id">Детали</a></p></td>
+        </tr>
+        }
+    </table>
+</div>

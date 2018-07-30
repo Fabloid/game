@@ -1,0 +1,21 @@
+﻿<div>
+    <h3>Список игр</h3>
+    <table>
+        <tr>
+            <td><p>|Номер хода|</p></td>
+            <td><p>Игрок|</p></td>
+            <td><p>Ячейка|</p></td>
+            <td></td>
+        </tr>
+        @{int i = 1;}
+        @foreach (var m in ViewBag.query)
+        {            
+            <tr>
+                <td><p>@i</p></td>
+                <td><p>@m._winner</p></td>
+                <td><p>@m._number_cell</p></td>
+            </tr>        
+            i++;
+        }
+    </table>
+</div>

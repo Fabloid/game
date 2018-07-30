@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Игра</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style type="text/css">
+
+    </style>
+
+</head>
+<body>
+    <header class="card-header">
+        <ul class="nav justify-content-center nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="/Home/Index">Новая игра</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Home/Info">Итоги игр</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="container body-content card text-center">
+        @RenderBody()        
+    </div>
+
+    <div>
+        <footer class="card-footer navbar-nav">
+            <p>&copy; @DateTime.Now.Year – Александр Ильин</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
